@@ -1,14 +1,17 @@
 
 info = {}
 
-
 def menu():
-    print("=====MENU=====")
-    print("1 -> Add Item")
-    print("2 -> Search")
-    print("3 -> Exit")
-    print("4 -> Values")
-
+    print()
+    print("============MENU===========")
+    print()
+    print("        1 -> Add Item")
+    print("        2 -> Search")
+    print("        3 -> Exit")
+    print("        4 -> Values")
+    print()
+    print("===========================")
+    print()
 
 while True:
     menu()
@@ -50,10 +53,9 @@ while True:
     elif user == 4:
         print(len(info))
 
-
     else:
-            print("You must enter a number between 1 to 4")
-            continue
+        print("You must enter a number between 1 to 4")
+        continue
 
     run_again = input("Would you like to try again the program?(y/n): ")
     if run_again == "y":
