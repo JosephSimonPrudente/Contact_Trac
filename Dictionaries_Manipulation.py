@@ -1,3 +1,5 @@
+
+info = {}
 #Display Menu options
 print("=====MENU=====")
 print("1 -> Add Item")
@@ -14,25 +16,32 @@ if user > 3:
 				   #Use dictionary to store the info
 				   #Use the full name as key
 				   #The value is another dictionary of personal information
+while True:
+    if user == 1:
+     fullname = input("Full name:")
+     age = input("Age:")
+     Address = input("Address:")
+     Contact = input("Contact No.:")
 
-if user == 1:
-    fullname = input("Full name:")
-    age = input("Age:")
-    Address = input("Address:")
-    Contact = input("Contact No.:")
-    Contacts = {
-        "Name":fullname,
-        "Age":age,
+     info[fullname] = {
+        "Age": age,
         "Add": Address,
         "Contact": Contact,
-    }
-    print("SAVED",Contacts)
-
+     }
+     print("SAVED", info)
 
 #- Option 2: Search, ask full name then display the record
-if user == 2:
-    search = input("Fullname:")
-    if search in Contacts:
-        for key, search in Contacts.items():
-            print(key,search)
+     if user == 2:
+        search = input("Fullname:")
+        if search in fullname:
+            for key, value in Contacts[search].items():
+                print(key,search)
+
 #- Option 3: Ask the user if want to exit or retry.
+
+    if user == 3:
+        Exit = input("You want to Exit or Retry(E/R):")
+        if Exit == "E":
+            break
+
+
