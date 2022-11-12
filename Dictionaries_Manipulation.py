@@ -7,8 +7,8 @@ def menu():
     print()
     print("        1 -> Add Item")
     print("        2 -> Search")
-    print("        3 -> Exit")
-    print("        4 -> Values")
+    print("        3 -> Values")
+    print("        4 -> Exit")
     print()
     print("===========================")
     print()
@@ -41,8 +41,10 @@ while True:
         else:
             print("Doesnt Match Any info About", search)
 
-
     elif user == 3:
+        print(len(info))
+
+    elif user == 4:
         Exit = input("You want to Retry or Exit(R/E):")
         if Exit == "R":
             continue
@@ -50,11 +52,9 @@ while True:
             print("Thank you")
             break
 
-    elif user == 4:
-        print(len(info))
 
     else:
-        print("You must enter a number between 1 to 4")
+        print("You must enter a number from 1 to 4")
         continue
 
     run_again = input("Would you like to try again the program?(y/n): ")
