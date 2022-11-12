@@ -30,5 +30,9 @@ if user == 1:
 
 
 #- Option 2: Search, ask full name then display the record
-
+if user == 2:
+    search = input("Fullname:")
+    if search in Contacts:
+        for key, search in Contacts.items():
+            print(key,search)
 #- Option 3: Ask the user if want to exit or retry.
