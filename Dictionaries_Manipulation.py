@@ -5,7 +5,7 @@ print("2 -> Search")
 print("3 -> Exit")
 
 #Allow user to select item in the menu (check if valid)
-user = int(input("Select from the Menu:"))
+user = int(input("Select from the Menu(1-3):"))
 if user > 3:
     print("Invalid")
 
@@ -14,6 +14,20 @@ if user > 3:
 				   #Use dictionary to store the info
 				   #Use the full name as key
 				   #The value is another dictionary of personal information
+
+if user == 1:
+    fullname = input("Full name:")
+    age = input("Age:")
+    Address = input("Address:")
+    Contact = input("Contact No.:")
+    Contacts = {
+        "Name":fullname,
+        "Age":age,
+        "Add": Address,
+        "Contact": Contact,
+    }
+    print("SAVED",Contacts)
+
 
 #- Option 2: Search, ask full name then display the record
 
