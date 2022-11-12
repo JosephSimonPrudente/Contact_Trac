@@ -2,68 +2,63 @@
 info = {}
 
 
-#Display Menu options
-
 def menu():
     print("=====MENU=====")
     print("1 -> Add Item")
     print("2 -> Search")
     print("3 -> Exit")
-
-#Allow user to select item in the menu (check if valid)
-while True:
-    user = input('Select from the Menu(1-3):')
-    try:
-        user = int(user)
-    except:
-        print('Please use numeric digits.')
-        continue
-    if user > 3:
-        print('Please Try again.')
-        continue
-    break
+    print("4 -> Values")
 
 
-#Perform the selected option
-#- Option 1: Ask personal data for contact tracing (Listed are sample only, add more)
-				   #Use dictionary to store the info
-				   #Use the full name as key
-				   #The value is another dictionary of personal information
 while True:
     menu()
+    user = int(input('Select from the Menu(1-4):'))
+    if user > 0 and user <= 4:
+            print("You entered a valid number")
+
     if user == 1:
         fullname = input("Full name:")
-        age = input("Age:")
+        age = int(input("Age:"))
         Address = input("Address:")
-        Contact = input("Contact No.:")
+        Contact = int(input("Contact No.:"))
 
         info[fullname] = {
-        "Age": age,
-        "Add": Address,
-        "Contact": Contact,
+        "Age:": age,
+        "Add:": Address,
+        "Contact:": Contact,
         }
         print("SAVED", info)
 
-        #- Option 2: Search, ask full name then display the record
-    if user == 2:
+
+    elif user == 2:
         search = input("Fullname:")
         if search in info:
             for key, value in info[search].items():
                 print(key,value)
         else:
-            print("Doesnt Match Any info", search)
+            print("Doesnt Match Any info About", search)
 
-#- Option 3: Ask the user if want to exit or retry.
 
-    if user == 3:
-        Exit = input("You want to Exit or Retry(E/R):")
-        if Exit == "E":
+    elif user == 3:
+        Exit = input("You want to Retry or Exit(R/E):")
+        if Exit == "R":
+            continue
+        else:
+            print("Thank you")
             break
 
+    elif user == 4:
+        print(len(info))
 
-    run_again = input("\nWould you like to try again the program?(y/n): ")
+
+    else:
+            print("You must enter a number between 1 to 4")
+            continue
+
+    run_again = input("Would you like to try again the program?(y/n): ")
     if run_again == "y":
         continue
     else:
-        print("Thank you for using the program!")
+        print("Thank you")
         break
+
